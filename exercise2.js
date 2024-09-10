@@ -6,7 +6,39 @@
 // Add a static method compareAccounts(account1, account2) that compares two BankAccount objects and returns the account with the higher balance.
 
 class BankAccount {
-  // YOUR CODE HERE
+  #accountNumber 
+  #balance
+
+  constructor(accountNumber, balance){
+    this.#accountNumber = accountNumber
+    this.#balance = balance
+  }
+
+  deposit(amount){
+    return this.#balance += amount
+  }
+
+  withdraw(amount){
+    return this.#balance -= amount
+  }
+
+
+get accountNumber() {
+    return this.#accountNumber;
+  }
+
+  get balance() {
+    return this.#balance;
+  }
+
+  static compareAccounts(account1, account2){
+    if(account1.balance > account2.balance){
+      return account1;
+    } else {
+      return account2;
+    }
+  }
+
 }
 
 
